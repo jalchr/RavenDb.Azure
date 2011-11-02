@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceDefinition name="RavenDb.Azure" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
+  <WebRole name="RavenDb.Azure.ReadServer" vmsize="Medium">
+    <Sites>
+      <Site name="Web">
+        <Bindings>
+          <Binding name="PublicHttpEndpoint" endpointName="PublicHttpEndpoint" />
+          <Binding name="PrivateHttpEndpoint" endpointName="PrivateHttpEndpoint" />
+        </Bindings>
+      </Site>
+    </Sites>
+    <Endpoints>
+      <InputEndpoint name="PublicHttpEndpoint" protocol="http" port="80" />
+      <InternalEndpoint name="PrivateHttpEndpoint" protocol="http" />
+    </Endpoints>
+    <Imports>
+      <Import moduleName="Diagnostics" />
+    </Imports>
+    <LocalResources>
+      <LocalStorage name="RavenDb.Storage.Cache" cleanOnRoleRecycle="false" sizeInMB="50000" />
+    </LocalResources>
+    <ConfigurationSettings>
+      <Setting name="RavenDb.Storage" />
+    </ConfigurationSettings>
+  </WebRole>
+</ServiceDefinition>

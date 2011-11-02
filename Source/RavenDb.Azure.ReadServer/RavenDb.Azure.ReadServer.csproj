@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D310A07F-4405-4594-8C6B-524D1B7A272A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RavenDb.Azure.ReadServer</RootNamespace>
+    <AssemblyName>RavenDb.Azure.ReadServer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.WindowsAzure.CloudDrive, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\Software\Azure\Microsoft.WindowsAzure.CloudDrive.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Diagnostics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\Software\Azure\Microsoft.WindowsAzure.Diagnostics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\Software\Azure\Microsoft.WindowsAzure.ServiceRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.StorageClient, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\Software\Azure\Microsoft.WindowsAzure.StorageClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RavenDb.Bundles.Azure\RavenDb.Bundles.Azure.csproj">
+      <Project>{DF339A0E-085E-489C-A7ED-A6FCA7809F4F}</Project>
+      <Name>RavenDb.Bundles.Azure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\Software\RavenDb\Bundles\Raven.Bundles.Authentication.dll">
+      <Link>Plugins\Raven.Bundles.Authentication.dll</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Bundles\Raven.Bundles.Authentication.pdb">
+      <Link>Plugins\Raven.Bundles.Authentication.pdb</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Bundles\Raven.Bundles.Authorization.dll">
+      <Link>Plugins\Raven.Bundles.Authorization.dll</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Bundles\Raven.Bundles.Authorization.pdb">
+      <Link>Plugins\Raven.Bundles.Authorization.pdb</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Bundles\Raven.Bundles.CascadeDelete.dll">
+      <Link>Plugins\Raven.Bundles.CascadeDelete.dll</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Bundles\Raven.Bundles.CascadeDelete.pdb">
+      <Link>Plugins\Raven.Bundles.CascadeDelete.pdb</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Bundles\Raven.Bundles.Expiration.dll">
+      <Link>Plugins\Raven.Bundles.Expiration.dll</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Bundles\Raven.Bundles.Expiration.pdb">
+      <Link>Plugins\Raven.Bundles.Expiration.pdb</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Bundles\Raven.Bundles.Replication.dll">
+      <Link>Plugins\Raven.Bundles.Replication.dll</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Bundles\Raven.Bundles.Replication.pdb">
+      <Link>Plugins\Raven.Bundles.Replication.pdb</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Bundles\Raven.Bundles.Versioning.dll">
+      <Link>Plugins\Raven.Bundles.Versioning.dll</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Bundles\Raven.Bundles.Versioning.pdb">
+      <Link>Plugins\Raven.Bundles.Versioning.pdb</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Esent.Interop.dll">
+      <Link>bin\Esent.Interop.dll</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Esent.Interop.pdb">
+      <Link>bin\Esent.Interop.pdb</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Esent.Interop.xml">
+      <Link>bin\Esent.Interop.xml</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\ICSharpCode.NRefactory.dll">
+      <Link>bin\ICSharpCode.NRefactory.dll</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Lucene.Net.Contrib.Spatial.dll">
+      <Link>bin\Lucene.Net.Contrib.Spatial.dll</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Lucene.Net.Contrib.Spatial.pdb">
+      <Link>bin\Lucene.Net.Contrib.Spatial.pdb</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Lucene.Net.Contrib.Spatial.xml">
+      <Link>bin\Lucene.Net.Contrib.Spatial.xml</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Lucene.Net.Contrib.SpellChecker.dll">
+      <Link>bin\Lucene.Net.Contrib.SpellChecker.dll</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Lucene.Net.Contrib.SpellChecker.pdb">
+      <Link>bin\Lucene.Net.Contrib.SpellChecker.pdb</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Lucene.Net.Contrib.SpellChecker.xml">
+      <Link>bin\Lucene.Net.Contrib.SpellChecker.xml</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Lucene.Net.dll">
+      <Link>bin\Lucene.Net.dll</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Lucene.Net.pdb">
+      <Link>bin\Lucene.Net.pdb</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Lucene.Net.xml">
+      <Link>bin\Lucene.Net.xml</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Newtonsoft.Json.dll">
+      <Link>bin\Newtonsoft.Json.dll</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Newtonsoft.Json.pdb">
+      <Link>bin\Newtonsoft.Json.pdb</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Newtonsoft.Json.xml">
+      <Link>bin\Newtonsoft.Json.xml</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\NLog.dll">
+      <Link>bin\NLog.dll</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\NLog.pdb">
+      <Link>bin\NLog.pdb</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\NLog.xml">
+      <Link>bin\NLog.xml</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Raven.Abstractions.dll">
+      <Link>bin\Raven.Abstractions.dll</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Raven.Abstractions.pdb">
+      <Link>bin\Raven.Abstractions.pdb</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Raven.Database.dll">
+      <Link>bin\Raven.Database.dll</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Raven.Database.pdb">
+      <Link>bin\Raven.Database.pdb</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Raven.Munin.dll">
+      <Link>bin\Raven.Munin.dll</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Raven.Munin.pdb">
+      <Link>bin\Raven.Munin.pdb</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Raven.Storage.Esent.dll">
+      <Link>bin\Raven.Storage.Esent.dll</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Raven.Storage.Esent.pdb">
+      <Link>bin\Raven.Storage.Esent.pdb</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Raven.Storage.Managed.dll">
+      <Link>bin\Raven.Storage.Managed.dll</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Raven.Storage.Managed.pdb">
+      <Link>bin\Raven.Storage.Managed.pdb</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Raven.Web.dll">
+      <Link>bin\Raven.Web.dll</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Raven.Web.pdb">
+      <Link>bin\Raven.Web.pdb</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Rhino.Licensing.dll">
+      <Link>bin\Rhino.Licensing.dll</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\bin\Rhino.Licensing.pdb">
+      <Link>bin\Rhino.Licensing.pdb</Link>
+    </Content>
+    <Content Include="..\..\Software\RavenDb\Web\Raven.Studio.xap">
+      <Link>Raven.Studio.xap</Link>
+    </Content>
+    <Content Include="..\RavenDb.Bundles.Azure\bin\Debug\RavenDb.Bundles.Azure.dll">
+      <Link>Plugins\RavenDb.Bundles.Azure.dll</Link>
+    </Content>
+    <Content Include="..\RavenDb.Bundles.Azure\bin\Debug\RavenDb.Bundles.Azure.pdb">
+      <Link>Plugins\RavenDb.Bundles.Azure.pdb</Link>
+    </Content>
+    <Content Include="bin\RavenDb.Bundles.Azure.dll" />
+    <Content Include="bin\RavenDb.Bundles.Azure.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\Software\RavenDb\Web\web.config">
+      <Link>web.config</Link>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>10842</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

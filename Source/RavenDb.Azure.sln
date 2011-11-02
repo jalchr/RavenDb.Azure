@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "RavenDb.Azure", "RavenDb.Azure\RavenDb.Azure.ccproj", "{AFC459EF-C9B1-45AE-9084-90948676A91D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RavenDb.Azure.ReadServer", "RavenDb.Azure.ReadServer\RavenDb.Azure.ReadServer.csproj", "{D310A07F-4405-4594-8C6B-524D1B7A272A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RavenDb.Azure.WriteServer", "RavenDb.Azure.WriteServer\RavenDb.Azure.WriteServer.csproj", "{F1B00CB7-92B4-4350-8AAB-2D0228C809CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RavenDb.Bundles.Azure", "RavenDb.Bundles.Azure\RavenDb.Bundles.Azure.csproj", "{DF339A0E-085E-489C-A7ED-A6FCA7809F4F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFC459EF-C9B1-45AE-9084-90948676A91D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFC459EF-C9B1-45AE-9084-90948676A91D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFC459EF-C9B1-45AE-9084-90948676A91D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFC459EF-C9B1-45AE-9084-90948676A91D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D310A07F-4405-4594-8C6B-524D1B7A272A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D310A07F-4405-4594-8C6B-524D1B7A272A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D310A07F-4405-4594-8C6B-524D1B7A272A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D310A07F-4405-4594-8C6B-524D1B7A272A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1B00CB7-92B4-4350-8AAB-2D0228C809CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1B00CB7-92B4-4350-8AAB-2D0228C809CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1B00CB7-92B4-4350-8AAB-2D0228C809CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1B00CB7-92B4-4350-8AAB-2D0228C809CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF339A0E-085E-489C-A7ED-A6FCA7809F4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF339A0E-085E-489C-A7ED-A6FCA7809F4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF339A0E-085E-489C-A7ED-A6FCA7809F4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF339A0E-085E-489C-A7ED-A6FCA7809F4F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
