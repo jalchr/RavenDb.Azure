@@ -45,6 +45,14 @@
       <RoleName>RavenDb.Azure.ReadServer</RoleName>
       <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
     </ProjectReference>
+    <ProjectReference Include="..\RavenDb.Azure.ReadWriteServer\RavenDb.Azure.ReadWriteServer.csproj">
+      <Name>RavenDb.Azure.ReadWriteServer</Name>
+      <Project>{1245abf8-539d-482e-84f3-9439f4306c36}</Project>
+      <Private>True</Private>
+      <RoleType>Web</RoleType>
+      <RoleName>RavenDb.Azure.ReadWriteServer</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+    </ProjectReference>
   </ItemGroup>
   <!-- Import the target files for this project template -->
   <PropertyGroup>

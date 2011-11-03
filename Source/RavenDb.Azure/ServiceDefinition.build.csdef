@@ -10,14 +10,6 @@
 -->
 <ServiceDefinition name="RavenDb.Azure" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
   <WebRole name="RavenDb.Azure.ReadServer" vmsize="Medium">
-    <!--<Sites>
-      <Site name="Web">
-        <Bindings>
-          <Binding name="PublicHttpEndpoint" endpointName="PublicHttpEndpoint" />
-          <Binding name="PrivateHttpEndpoint" endpointName="PrivateHttpEndpoint" />
-        </Bindings>
-      </Site>
-    </Sites>-->
     <Endpoints>
       <InputEndpoint name="PublicHttpEndpoint" protocol="http" port="80" />
       <InternalEndpoint name="PrivateHttpEndpoint" protocol="http" />
@@ -26,10 +18,37 @@
       <Import moduleName="Diagnostics" />
     </Imports>
     <LocalResources>
-      <LocalStorage name="Storage.Cache" cleanOnRoleRecycle="false" sizeInMB="50000" />
+      <LocalStorage name="Storage.Cache" cleanOnRoleRecycle="false" sizeInMB="5000" />
     </LocalResources>
     <ConfigurationSettings>
       <Setting name="Storage.ConnectionString" />
+      <Setting name="Storage.Size" />
+      <Setting name="Storage.ContainerName" />
+      <Setting name="Diagnostics.TransferPeriodInMinutes" />
+      <Setting name="Diagnostics.EventLogsToTransfer" />
+      <Setting name="Diagnostics.LogLayout" />
+      <Setting name="Diagnostics.LogLevel" />
+    </ConfigurationSettings>
+  </WebRole>
+  <WebRole name="RavenDb.Azure.ReadWriteServer" vmsize="Medium">
+    <Endpoints>
+      <InputEndpoint name="PublicHttpEndpoint" protocol="http" port="8080" />
+      <InternalEndpoint name="PrivateHttpEndpoint" protocol="http" />
+    </Endpoints>
+    <Imports>
+      <Import moduleName="Diagnostics" />
+    </Imports>
+    <LocalResources>
+      <LocalStorage name="Storage.Cache" cleanOnRoleRecycle="false" sizeInMB="5000" />
+    </LocalResources>
+    <ConfigurationSettings>
+      <Setting name="Storage.ConnectionString" />
+      <Setting name="Storage.Size" />
+      <Setting name="Storage.ContainerName" />
+      <Setting name="Diagnostics.TransferPeriodInMinutes" />
+      <Setting name="Diagnostics.EventLogsToTransfer" />
+      <Setting name="Diagnostics.LogLayout" />
+      <Setting name="Diagnostics.LogLevel" />
     </ConfigurationSettings>
   </WebRole>
 </ServiceDefinition>

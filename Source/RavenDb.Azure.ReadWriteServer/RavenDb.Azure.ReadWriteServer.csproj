@@ -6,12 +6,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D310A07F-4405-4594-8C6B-524D1B7A272A}</ProjectGuid>
+    <ProjectGuid>{1245ABF8-539D-482E-84F3-9439F4306C36}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RavenDb.Azure.ReadServer</RootNamespace>
-    <AssemblyName>RavenDb.Azure.ReadServer</AssemblyName>
+    <RootNamespace>RavenDb.Azure.ReadWriteServer</RootNamespace>
+    <AssemblyName>RavenDb.Azure.ReadWriteServer</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
@@ -54,12 +54,6 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\RavenDb.Bundles.Azure\RavenDb.Bundles.Azure.csproj">
-      <Project>{DF339A0E-085E-489C-A7ED-A6FCA7809F4F}</Project>
-      <Name>RavenDb.Bundles.Azure</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\..\Software\RavenDb\Bundles\Raven.Bundles.Authentication.dll">
@@ -202,6 +196,12 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RavenDb.Bundles.Azure\RavenDb.Bundles.Azure.csproj">
+      <Project>{DF339A0E-085E-489C-A7ED-A6FCA7809F4F}</Project>
+      <Name>RavenDb.Bundles.Azure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="..\..\Software\RavenDb\Web\web.config">
       <Link>web.config</Link>
     </Content>
@@ -217,7 +217,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>10842</DevelopmentServerPort>
+          <DevelopmentServerPort>49633</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
@@ -230,10 +230,6 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
-  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

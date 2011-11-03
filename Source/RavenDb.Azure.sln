@@ -5,14 +5,14 @@ Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "RavenDb.Azure", "RavenDb.Az
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RavenDb.Azure.ReadServer", "RavenDb.Azure.ReadServer\RavenDb.Azure.ReadServer.csproj", "{D310A07F-4405-4594-8C6B-524D1B7A272A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RavenDb.Azure.WriteServer", "RavenDb.Azure.WriteServer\RavenDb.Azure.WriteServer.csproj", "{F1B00CB7-92B4-4350-8AAB-2D0228C809CE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RavenDb.Bundles.Azure", "RavenDb.Bundles.Azure\RavenDb.Bundles.Azure.csproj", "{DF339A0E-085E-489C-A7ED-A6FCA7809F4F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B93F6C04-9584-4621-AEFC-090B46425475}"
 	ProjectSection(SolutionItems) = preProject
 		..\Readme.markdown = ..\Readme.markdown
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RavenDb.Azure.ReadWriteServer", "RavenDb.Azure.ReadWriteServer\RavenDb.Azure.ReadWriteServer.csproj", "{1245ABF8-539D-482E-84F3-9439F4306C36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,14 +28,14 @@ Global
 		{D310A07F-4405-4594-8C6B-524D1B7A272A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D310A07F-4405-4594-8C6B-524D1B7A272A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D310A07F-4405-4594-8C6B-524D1B7A272A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F1B00CB7-92B4-4350-8AAB-2D0228C809CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F1B00CB7-92B4-4350-8AAB-2D0228C809CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F1B00CB7-92B4-4350-8AAB-2D0228C809CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F1B00CB7-92B4-4350-8AAB-2D0228C809CE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DF339A0E-085E-489C-A7ED-A6FCA7809F4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DF339A0E-085E-489C-A7ED-A6FCA7809F4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF339A0E-085E-489C-A7ED-A6FCA7809F4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF339A0E-085E-489C-A7ED-A6FCA7809F4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1245ABF8-539D-482E-84F3-9439F4306C36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1245ABF8-539D-482E-84F3-9439F4306C36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1245ABF8-539D-482E-84F3-9439F4306C36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1245ABF8-539D-482E-84F3-9439F4306C36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
