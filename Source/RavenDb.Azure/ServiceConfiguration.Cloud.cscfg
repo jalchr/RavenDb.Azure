@@ -3,8 +3,8 @@
   <Role name="RavenDb.Azure.ReadServer">
     <Instances count="8" />
     <ConfigurationSettings>
-      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=bwinravendb;AccountKey=XozFGZ3YP8Pcwvs5YVTAs3msAU3O4HfF1VHovaK5tdfWmkixHrzklG6Lk6mNjyy9arnhcussdgjnw4VYbsUuBQ==" />
-      <Setting name="Storage.ConnectionString" value="DefaultEndpointsProtocol=http;AccountName=bwinravendb;AccountKey=XozFGZ3YP8Pcwvs5YVTAs3msAU3O4HfF1VHovaK5tdfWmkixHrzklG6Lk6mNjyy9arnhcussdgjnw4VYbsUuBQ==" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="" />
+      <Setting name="Storage.ConnectionString" value="" />
       <Setting name="Storage.ContainerName" value="ravendb"/>
       <Setting name="Storage.Size" value="50000" />
       <Setting name="Diagnostics.TransferPeriodInMinutes" value="0.3"/>
@@ -16,8 +16,8 @@
   <Role name="RavenDb.Azure.ReadWriteServer">
     <Instances count="2" />
     <ConfigurationSettings>
-      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=bwinravendb;AccountKey=XozFGZ3YP8Pcwvs5YVTAs3msAU3O4HfF1VHovaK5tdfWmkixHrzklG6Lk6mNjyy9arnhcussdgjnw4VYbsUuBQ==" />
-      <Setting name="Storage.ConnectionString" value="DefaultEndpointsProtocol=http;AccountName=bwinravendb;AccountKey=XozFGZ3YP8Pcwvs5YVTAs3msAU3O4HfF1VHovaK5tdfWmkixHrzklG6Lk6mNjyy9arnhcussdgjnw4VYbsUuBQ==" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="" />
+      <Setting name="Storage.ConnectionString" value="" />
       <Setting name="Storage.ContainerName" value="ravendb"/>
       <Setting name="Storage.Size" value="50000" />
       <Setting name="Diagnostics.TransferPeriodInMinutes" value="0.3"/>
