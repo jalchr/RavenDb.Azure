@@ -83,12 +83,6 @@
     <Content Include="..\..\Software\RavenDb\Bundles\Raven.Bundles.CascadeDelete.pdb">
       <Link>Plugins\Raven.Bundles.CascadeDelete.pdb</Link>
     </Content>
-    <Content Include="..\..\Software\RavenDb\Bundles\Raven.Bundles.Expiration.dll">
-      <Link>Plugins\Raven.Bundles.Expiration.dll</Link>
-    </Content>
-    <Content Include="..\..\Software\RavenDb\Bundles\Raven.Bundles.Expiration.pdb">
-      <Link>Plugins\Raven.Bundles.Expiration.pdb</Link>
-    </Content>
     <Content Include="..\..\Software\RavenDb\Bundles\Raven.Bundles.Replication.dll">
       <Link>Plugins\Raven.Bundles.Replication.dll</Link>
     </Content>

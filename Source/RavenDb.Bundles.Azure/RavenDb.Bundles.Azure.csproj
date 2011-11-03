@@ -103,13 +103,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AzureIntegration.cs" />
-    <Compile Include="Diagnostics\AzureNlogTarget.cs" />
+    <Compile Include="CloudInstanceEnumerator.cs" />
+    <Compile Include="Configuration\CloudConfigurationProvider.cs" />
+    <Compile Include="Configuration\ConfigurationSettingsKeys.cs" />
+    <Compile Include="Configuration\IConfigurationProvider.cs" />
+    <Compile Include="Diagnostics\CloudDiagnosticsProvider.cs" />
+    <Compile Include="Diagnostics\IDiagnosticsProvider.cs" />
     <Compile Include="Hooks\DatabaseCreateTrigger.cs" />
     <Compile Include="Hooks\DatabaseStartupTask.cs" />
+    <Compile Include="Hooks\IndexCreateTrigger.cs" />
+    <Compile Include="IInstanceEnumerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RoleEnvironmentUtilities.cs" />
+    <Compile Include="Replication\ReplicationUtilities.cs" />
     <Compile Include="RoleInstanceExtensions.cs" />
+    <Compile Include="Storage\CloudStorageProvider.cs" />
+    <Compile Include="Storage\IStorageProvider.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

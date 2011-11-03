@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ServiceConfiguration serviceName="RavenDb.Azure" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="1" osVersion="*">
   <Role name="RavenDb.Azure.ReadServer">
-    <Instances count="2" />
+    <Instances count="1" />
     <ConfigurationSettings>
-      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="" />
-      <Setting name="RavenDb.Storage" value="" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=bwinravendb;AccountKey=XozFGZ3YP8Pcwvs5YVTAs3msAU3O4HfF1VHovaK5tdfWmkixHrzklG6Lk6mNjyy9arnhcussdgjnw4VYbsUuBQ==" />
+      <Setting name="Storage.ConnectionString" value="DefaultEndpointsProtocol=http;AccountName=bwinravendb;AccountKey=XozFGZ3YP8Pcwvs5YVTAs3msAU3O4HfF1VHovaK5tdfWmkixHrzklG6Lk6mNjyy9arnhcussdgjnw4VYbsUuBQ==" />
     </ConfigurationSettings>
   </Role>
 </ServiceConfiguration>
