@@ -25,17 +25,20 @@ Planned:
 
 Known issues:
 
-* Raven.Studio does not work for some reason
-* Full IIS hosting does not work because of the late entry point IStartupTask ( we would need a sooner entry point on a per request basis, this is a known Azure issue ) 
+* Raven.Studio does not work for some reason.
+* Full IIS hosting does not work because of the late entry point IStartupTask ( we would need a sooner entry point on a per request basis, this is a known Azure issue ).
+* Do not enable Intellitrace for the roles, since that triggers the well known Newtonsoft.Json error of non verifieable generated code.
+* Somestimes packaging fails because the directory "RavenDb.Azure.csx" cannot be removed. Just delete the directory yourself and repackage to resolve this issue.
+
 
 Steps for deployment:
 ----
 
 For both read and read/write server roles:
 
-1. Configure the correct numbers/sizes of VM instances you want to use 
-3. Configure the correct storage connection strings ( for both diagnostics and actual data storage )
-4. Configure the correct storage ammount you want to reserve ( Configuration setting "Storage.Size" )
-5. Possibly alter the preconfigured endpoints, right now the read servers are accessible load balanced on port 80 and the read/write servers on port 8080
+1. Configure the correct numbers/sizes of VM instances you want to use.
+3. Configure the correct storage connection strings ( for both diagnostics and actual data storage ).
+4. Configure the correct storage ammount you want to reserve ( Configuration setting "Storage.Size" ).
+5. Possibly alter the preconfigured endpoints, right now the read servers are accessible load balanced on port 80 and the read/write servers on port 8080.
 
 Deploy !

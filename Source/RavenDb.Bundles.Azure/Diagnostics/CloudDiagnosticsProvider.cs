@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using Microsoft.WindowsAzure.Diagnostics;
+using Microsoft.WindowsAzure.ServiceRuntime;
 using NLog;
 using NLog.Config;
 using NLog.Layouts;
@@ -68,7 +69,7 @@ namespace RavenDb.Bundles.Azure.Diagnostics
 
             // Create nlog configuration:
             var loggingConfiguration    = new LoggingConfiguration();
-            var logLayout               = ConfigurationProvider.GetSetting(ConfigurationSettingsKeys.DiagnosticsLogLayout, "${date:format=HH\\:MM\\:ss} ${logger} ${message} ${exception}");
+            var logLayout = ConfigurationProvider.GetSetting(ConfigurationSettingsKeys.DiagnosticsLogLayout, "${date} ${gdc:item=InstanceId} ${message} ${exception}");
 
             var traceTarget = new NLog.Targets.TraceTarget() {Layout = logLayout};
             loggingConfiguration.AddTarget("trace", traceTarget);
@@ -77,6 +78,8 @@ namespace RavenDb.Bundles.Azure.Diagnostics
             var logLevel = (NLog.LogLevel)typeof(NLog.LogLevel).GetField(logLevelName, BindingFlags.Public | BindingFlags.Static).GetValue(null);
 
             loggingConfiguration.LoggingRules.Add(new LoggingRule("*", logLevel, traceTarget));
+
+            GlobalDiagnosticsContext.Set("InstanceId",RoleEnvironment.CurrentRoleInstance.Id);
             LogManager.Configuration = loggingConfiguration;
         }
     }

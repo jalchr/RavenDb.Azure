@@ -9,7 +9,7 @@
       <Setting name="Storage.Size" value="50000" />
       <Setting name="Diagnostics.TransferPeriodInMinutes" value="0.3"/>
       <Setting name="Diagnostics.EventLogsToTransfer" value="Application!*;System!*"/>
-      <Setting name="Diagnostics.LogLayout" value="${date:format=HH\\:MM\\:ss} ${logger} ${message} ${exception}"/>
+      <Setting name="Diagnostics.LogLayout" value="${date} ${gdc:item=InstanceId} ${message} ${exception}"/>
       <Setting name="Diagnostics.LogLevel" value="Debug"/>
     </ConfigurationSettings>
   </Role>
@@ -22,7 +22,7 @@
       <Setting name="Storage.Size" value="50000" />
       <Setting name="Diagnostics.TransferPeriodInMinutes" value="0.3"/>
       <Setting name="Diagnostics.EventLogsToTransfer" value="Application!*;System!*"/>
-      <Setting name="Diagnostics.LogLayout" value="${date:format=HH\\:MM\\:ss} ${logger} ${message} ${exception}"/>
+      <Setting name="Diagnostics.LogLayout" value="${date} ${gdc:item=InstanceId} ${message} ${exception}"/>
       <Setting name="Diagnostics.LogLevel" value="Debug"/>
     </ConfigurationSettings>
   </Role>

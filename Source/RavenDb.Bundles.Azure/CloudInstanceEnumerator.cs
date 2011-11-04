@@ -17,11 +17,23 @@ namespace RavenDb.Bundles.Azure
             return instances.Select(i => new InstanceDescription()
             {
                 Id = i.Id,
-                ExternalUrl = EndpointToUrl(i.InstanceEndpoints["PublicHttpEndpoint"]),
-                InternalUrl = EndpointToUrl(i.InstanceEndpoints["PrivateHttpEndpoint"]),
+                ExternalUrl = GetEndpointUrl(i.InstanceEndpoints,"PublicHttpEndpoint"),
+                InternalUrl = GetEndpointUrl(i.InstanceEndpoints,"PrivateHttpEndpoint"),
                 InstanceType = i.Role.Name.IndexOf("Write", StringComparison.OrdinalIgnoreCase) >= 0 ? InstanceType.ReadWrite : InstanceType.Read,
                 IsSelf = i.Id.Equals(RoleEnvironment.CurrentRoleInstance.Id, StringComparison.OrdinalIgnoreCase)
             });
+        }
+
+        private static string GetEndpointUrl( IDictionary<string,RoleInstanceEndpoint> endpoints,string endpointName )
+        {
+            RoleInstanceEndpoint endpoint = null;
+
+            if (endpoints.TryGetValue(endpointName, out endpoint))
+            {
+                return EndpointToUrl(endpoint);
+            }
+
+            return string.Empty;
         }
 
         private static string EndpointToUrl( RoleInstanceEndpoint endpoint )
