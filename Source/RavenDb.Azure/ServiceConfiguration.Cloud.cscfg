@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ServiceConfiguration serviceName="RavenDb.Azure" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="1" osVersion="*">
   <Role name="RavenDb.Azure.ReadServer">
-    <Instances count="8" />
+    <Instances count="4" />
     <ConfigurationSettings>
       <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="" />
       <Setting name="Storage.ConnectionString" value="" />
-      <Setting name="Storage.ContainerName" value="ravendb"/>
+      <Setting name="Storage.ContainerName" value="ravendb" />
       <Setting name="Storage.Size" value="50000" />
-      <Setting name="Diagnostics.TransferPeriodInMinutes" value="0.3"/>
-      <Setting name="Diagnostics.EventLogsToTransfer" value="Application!*;System!*"/>
-      <Setting name="Diagnostics.LogLayout" value="${date:format=HH\\:MM\\:ss} ${logger} ${message} ${exception}"/>
-      <Setting name="Diagnostics.LogLevel" value="Debug"/>
+      <Setting name="Diagnostics.TransferPeriodInMinutes" value="0.3" />
+      <Setting name="Diagnostics.EventLogsToTransfer" value="Application!*;System!*" />
+      <Setting name="Diagnostics.LogLayout" value="${date} ${gdc:item=InstanceId} ${message} ${exception}" />
+      <Setting name="Diagnostics.LogLevel" value="Debug" />
     </ConfigurationSettings>
   </Role>
   <Role name="RavenDb.Azure.ReadWriteServer">
-    <Instances count="2" />
+    <Instances count="1" />
     <ConfigurationSettings>
       <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="" />
       <Setting name="Storage.ConnectionString" value="" />
-      <Setting name="Storage.ContainerName" value="ravendb"/>
+      <Setting name="Storage.ContainerName" value="ravendb" />
       <Setting name="Storage.Size" value="50000" />
-      <Setting name="Diagnostics.TransferPeriodInMinutes" value="0.3"/>
-      <Setting name="Diagnostics.EventLogsToTransfer" value="Application!*;System!*"/>
-      <Setting name="Diagnostics.LogLayout" value="${date:format=HH\\:MM\\:ss} ${logger} ${message} ${exception}"/>
-      <Setting name="Diagnostics.LogLevel" value="Debug"/>
+      <Setting name="Diagnostics.TransferPeriodInMinutes" value="0.3" />
+      <Setting name="Diagnostics.EventLogsToTransfer" value="Application!*;System!*" />
+      <Setting name="Diagnostics.LogLayout" value="${date} ${gdc:item=InstanceId} ${message} ${exception}" />
+      <Setting name="Diagnostics.LogLevel" value="Debug" />
     </ConfigurationSettings>
   </Role>
 </ServiceConfiguration>

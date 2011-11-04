@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ServiceDefinition name="RavenDb.Azure" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
-  <WebRole name="RavenDb.Azure.ReadServer" vmsize="Medium">
+  <WebRole name="RavenDb.Azure.ReadServer" vmsize="Large">
     <Endpoints>
       <InputEndpoint name="PublicHttpEndpoint" protocol="http" port="80" />
       <InternalEndpoint name="PrivateHttpEndpoint" protocol="http" />
@@ -9,19 +9,19 @@
       <Import moduleName="Diagnostics" />
     </Imports>
     <LocalResources>
-      <LocalStorage name="Storage.Cache" cleanOnRoleRecycle="false" sizeInMB="5000" />
+      <LocalStorage name="Storage.Cache" cleanOnRoleRecycle="false" sizeInMB="50000" />
     </LocalResources>
     <ConfigurationSettings>
       <Setting name="Storage.ConnectionString" />
       <Setting name="Storage.Size" />
-      <Setting name="Storage.ContainerName"/>
-      <Setting name="Diagnostics.TransferPeriodInMinutes"/>
-      <Setting name="Diagnostics.EventLogsToTransfer"/>
-      <Setting name="Diagnostics.LogLayout"/>
-      <Setting name="Diagnostics.LogLevel"/>
+      <Setting name="Storage.ContainerName" />
+      <Setting name="Diagnostics.TransferPeriodInMinutes" />
+      <Setting name="Diagnostics.EventLogsToTransfer" />
+      <Setting name="Diagnostics.LogLayout" />
+      <Setting name="Diagnostics.LogLevel" />
     </ConfigurationSettings>
   </WebRole>
-  <WebRole name="RavenDb.Azure.ReadWriteServer" vmsize="Medium">
+  <WebRole name="RavenDb.Azure.ReadWriteServer" vmsize="Large">
     <Endpoints>
       <InputEndpoint name="PublicHttpEndpoint" protocol="http" port="8080" />
       <InternalEndpoint name="PrivateHttpEndpoint" protocol="http" />
@@ -30,16 +30,16 @@
       <Import moduleName="Diagnostics" />
     </Imports>
     <LocalResources>
-      <LocalStorage name="Storage.Cache" cleanOnRoleRecycle="false" sizeInMB="5000" />
+      <LocalStorage name="Storage.Cache" cleanOnRoleRecycle="false" sizeInMB="50000" />
     </LocalResources>
     <ConfigurationSettings>
       <Setting name="Storage.ConnectionString" />
       <Setting name="Storage.Size" />
-      <Setting name="Storage.ContainerName"/>
-      <Setting name="Diagnostics.TransferPeriodInMinutes"/>
-      <Setting name="Diagnostics.EventLogsToTransfer"/>
-      <Setting name="Diagnostics.LogLayout"/>
-      <Setting name="Diagnostics.LogLevel"/>
+      <Setting name="Storage.ContainerName" />
+      <Setting name="Diagnostics.TransferPeriodInMinutes" />
+      <Setting name="Diagnostics.EventLogsToTransfer" />
+      <Setting name="Diagnostics.LogLayout" />
+      <Setting name="Diagnostics.LogLevel" />
     </ConfigurationSettings>
   </WebRole>
 </ServiceDefinition>

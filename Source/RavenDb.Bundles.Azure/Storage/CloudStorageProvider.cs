@@ -104,7 +104,7 @@ namespace RavenDb.Bundles.Azure.Storage
             CloudDrive.InitializeCache(localCache.RootPath, localCache.MaximumSizeInMegabytes);
             log.Info("Cache initialized: {0} mb",localCache.MaximumSizeInMegabytes);
 
-            var driveName           = selfInstance.FriendlyName + ".vhd";
+            var driveName           = selfInstance.InstanceType + selfInstance.InstanceIndex + ".vhd";
             log.Info("Virtual drive name: {0}",driveName);
             
             var pageBlob            = cloudBlobContainer.GetPageBlobReference(driveName);

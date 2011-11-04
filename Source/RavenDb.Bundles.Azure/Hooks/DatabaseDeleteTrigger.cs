@@ -59,7 +59,7 @@ namespace RavenDb.Bundles.Azure.Hooks
                 if (directory.Exists)
                 {
                     log.Info("Deleting directory {0} for database {1}",directory.FullName,databaseName);
-                    directory.Delete(true);
+                    //directory.Delete(true);
                 }
             }
 

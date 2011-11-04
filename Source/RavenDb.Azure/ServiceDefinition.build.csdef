@@ -9,7 +9,7 @@
   **********************************************************************************************
 -->
 <ServiceDefinition name="RavenDb.Azure" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
-  <WebRole name="RavenDb.Azure.ReadServer" vmsize="Medium">
+  <WebRole name="RavenDb.Azure.ReadServer" vmsize="Large">
     <Endpoints>
       <InputEndpoint name="PublicHttpEndpoint" protocol="http" port="80" />
       <InternalEndpoint name="PrivateHttpEndpoint" protocol="http" />
@@ -18,7 +18,7 @@
       <Import moduleName="Diagnostics" />
     </Imports>
     <LocalResources>
-      <LocalStorage name="Storage.Cache" cleanOnRoleRecycle="false" sizeInMB="5000" />
+      <LocalStorage name="Storage.Cache" cleanOnRoleRecycle="false" sizeInMB="50000" />
     </LocalResources>
     <ConfigurationSettings>
       <Setting name="Storage.ConnectionString" />
@@ -30,7 +30,7 @@
       <Setting name="Diagnostics.LogLevel" />
     </ConfigurationSettings>
   </WebRole>
-  <WebRole name="RavenDb.Azure.ReadWriteServer" vmsize="Medium">
+  <WebRole name="RavenDb.Azure.ReadWriteServer" vmsize="Large">
     <Endpoints>
       <InputEndpoint name="PublicHttpEndpoint" protocol="http" port="8080" />
       <InternalEndpoint name="PrivateHttpEndpoint" protocol="http" />
@@ -39,7 +39,7 @@
       <Import moduleName="Diagnostics" />
     </Imports>
     <LocalResources>
-      <LocalStorage name="Storage.Cache" cleanOnRoleRecycle="false" sizeInMB="5000" />
+      <LocalStorage name="Storage.Cache" cleanOnRoleRecycle="false" sizeInMB="50000" />
     </LocalResources>
     <ConfigurationSettings>
       <Setting name="Storage.ConnectionString" />
