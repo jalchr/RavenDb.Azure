@@ -56,19 +56,25 @@ namespace RavenDb.Bundles.Azure.Hooks
 
             if (TryGetDatabase(key, out databaseName))
             {
-                // Ensure database exists:
-                foreach (var instance in InstanceEnumerator.EnumerateInstances().Where( i => !i.IsSelf))
-                {
-                    using (var documentStore = new DocumentStore() { Url = instance.InternalUrl })
-                    {
-                        log.Info("Ensuring database {0} exists on instance {1} at {2}",databaseName,instance.Id,instance.InternalUrl);
-                        
-                        documentStore.Initialize();
-                        documentStore.DatabaseCommands.EnsureDatabaseExists(databaseName);
-                    }
-                }
+                var selfInstance = InstanceEnumerator.EnumerateInstances().First(i => i.IsSelf);
 
-                ReplicationUtilities.UpdateReplication(InstanceEnumerator,databaseName);
+                if (selfInstance.InstanceType == InstanceType.ReadWrite)
+                {
+                    // Ensure database exists:
+                    foreach (var instance in InstanceEnumerator.EnumerateInstances().Where(i => !i.IsSelf))
+                    {
+                        using (var documentStore = new DocumentStore() {Url = instance.InternalUrl})
+                        {
+                            log.Info("Ensuring database {0} exists on instance {1} at {2}", databaseName, instance.Id,
+                                     instance.InternalUrl);
+
+                            documentStore.Initialize();
+                            documentStore.DatabaseCommands.EnsureDatabaseExists(databaseName);
+                        }
+                    }
+
+                    ReplicationUtilities.UpdateReplication(selfInstance,InstanceEnumerator, databaseName);
+                }
             }
 
             base.AfterCommit(key, document, metadata, etag);

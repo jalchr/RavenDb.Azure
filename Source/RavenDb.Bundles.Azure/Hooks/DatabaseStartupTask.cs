@@ -38,7 +38,11 @@ namespace RavenDb.Bundles.Azure.Hooks
             database.Configuration.DataDirectory = storageDirectory.FullName;
 
             // Setup replication:
-            ReplicationUtilities.UpdateReplication(InstanceEnumerator,null);
+            var selfInstance = InstanceEnumerator.EnumerateInstances().First(i => i.IsSelf);
+            if (selfInstance.InstanceType == InstanceType.ReadWrite )
+            {
+                ReplicationUtilities.UpdateReplication(selfInstance,InstanceEnumerator, database);
+            }
         }
     }
 }

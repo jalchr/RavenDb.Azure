@@ -32,6 +32,9 @@ namespace RavenDb.Bundles.Azure.Storage
         [Import]
         public IConfigurationProvider   ConfigurationProvider { get; set; }
 
+        [Import]
+        public IInstanceEnumerator      InstanceEnumerator { get; set; }
+
         public void Initialize()
         {
             if (!isInitialized)
@@ -67,6 +70,8 @@ namespace RavenDb.Bundles.Azure.Storage
 
         private void OnInitialize()
         {
+            var selfInstance = InstanceEnumerator.EnumerateInstances().First(i => i.IsSelf);
+
             cloudStorageAccount     = CloudStorageAccount.Parse(RoleEnvironment.GetConfigurationSettingValue(ConfigurationSettingsKeys.StorageConnectionString));
             log.Info("Storage account selected: {0}",cloudStorageAccount.BlobEndpoint);
             
@@ -99,7 +104,7 @@ namespace RavenDb.Bundles.Azure.Storage
             CloudDrive.InitializeCache(localCache.RootPath, localCache.MaximumSizeInMegabytes);
             log.Info("Cache initialized: {0} mb",localCache.MaximumSizeInMegabytes);
 
-            var driveName           = RoleEnvironment.CurrentRoleInstance.GetFriendlyName() + ".vhd";
+            var driveName           = selfInstance.FriendlyName + ".vhd";
             log.Info("Virtual drive name: {0}",driveName);
             
             var pageBlob            = cloudBlobContainer.GetPageBlobReference(driveName);

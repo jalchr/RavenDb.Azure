@@ -21,12 +21,13 @@ Features:
 
 Planned:
 
-* Automatic index replication ( for manual indices )
+* Automatic index replication ( for manual indices ).
+* Write server failover.
 
 Known issues:
 
-* Raven.Studio does not work for some reason.
-* Full IIS hosting does not work because of the late entry point IStartupTask ( we would need a sooner entry point on a per request basis, this is a known Azure issue ).
+* Raven.Studio does not work for some reason ( need to investigate )
+* Full IIS hosting does not work because of the late entry point IStartupTask ( we would need a sooner entry point on a per request basis, this is a known Azure issue with diagnostics ).
 * Do not enable Intellitrace for the roles, since that triggers the well known Newtonsoft.Json error of non verifieable generated code.
 * Somestimes packaging fails because the directory "RavenDb.Azure.csx" cannot be removed. Just delete the directory yourself and repackage to resolve this issue.
 
